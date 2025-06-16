@@ -14,7 +14,7 @@
     <href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        *{
+            *{
             box-sizing: border-box;
             padding: 0;
         }
@@ -28,6 +28,7 @@
             'footer footer footer footer footer footer';
             gap: 5px;
             text-align: center;
+            
 
         }
         /**header logo area**/
@@ -102,6 +103,11 @@
         .main{
             grid-area: main;
             background: #606566;
+           border:  2px solid rgb(0, 255, 255);
+           border-radius: 2%;
+           align-items: center;
+           overflow: hidden;
+           margin-right: 2vw;
         }
         .container_property{
             display: grid;
@@ -109,38 +115,34 @@
                                 'description description maps maps'
                                 'contact_info contact_info maps maps';
             gap: 5px;  
-                            
-
         }
         .images{
-            grid-area: images;
-            overflow: hidden;    
-            height: 35vh;
+            grid-area: images;   
+            height:auto;
             padding: 15px;
             grid-template-areas: 'button';
             display: grid;
         }
         .house{
             background: #222529;
-            width: 60vw;
+            width: 50vw;
             margin-left: 10vw;
             height: auto;
             box-shadow: 2px 0 10px 5px rgb(158, 158, 158), 2px 0 2px 1px rgb(198, 194, 194);
-        }
-             
+        }  
         .button{
            left:15vw;
-           top:15vh;
+           top:20vh;
             color: #48f3ff;
             position: absolute;
             margin: 2cap auto;
-            padding: 2cap;
+            padding: 5cap;
             font-size: 1.1vw;
         }
         .btn-primary{
             width: 6vw;
-            height: 5vh;
-            padding: 0;
+            height: auto;
+            padding: 1px;
             text-align: center;
             background: none;
             border-style: none;
@@ -154,7 +156,6 @@
             background: rgb(45, 44, 44);
             box-shadow: 1px 0px 3px 0px rgb(41, 40, 40);
         }
-       
         .images img{
             max-height: 30vh;
             resize: none;
@@ -170,11 +171,44 @@
             display: inline-flex;
             right: 18vw;
         }
+        .modal-content{
+            background: #033238;
+        }
+        .modal-header{
+            background: rgb(39, 37, 37);
+        }
+        .modal-title{
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .modal-footer{
+            background: rgb(39, 37, 37);
+        }
+        .modal-footer .btn-secondary{
+            color:rgb(121, 5, 5);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+        }
+        .btn-secondary:hover,.btn-secondary:focus{
+            background: rgb(255, 255, 255);
+            color: red;
+        }
+        .modal-content .carousel-control-next-icon{
+            display: inline-flex;
+            right: 3vw;
+        }
+         .modal-content .carousel-control-prev-icon{
+            display: inline-flex;
+            left: 3vw;
+        }
 /**start of information**/
         .descripton{
             grid-area: description;
             background: #000000;
-            width: 50vw; 
+            width: 40vw;
+            margin: 1vw; 
         }
         .descripton>ul{
             list-style-type:none;
@@ -203,14 +237,18 @@
             color: #48ff9d;
         }
         
-
 /**start of maps**/
         .maps{
             grid-area: maps;
-            width: 60vw;
-            max-width: 27vw;
-            margin-right: 3vw;
-           
+            width:40vw;
+            float: left;
+            display: flex;
+            margin: 1vw;
+        }
+        .maps iframe{
+            width:25vw;
+            height: 50vh;
+            flex-shrink: 2;
         }
         .contact_info{
             grid-area: contact_info;
@@ -231,9 +269,7 @@
         /**END OF MAIN START OF FOOTER**/
         .footer{
             grid-area: footer;
-            background: gray;
-          
-            
+            background: gray; 
         }
           /*grid view columns*/
         .col-1{width:8.33333333%}
