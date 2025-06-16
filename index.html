@@ -14,7 +14,7 @@
     <href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-            *{
+         *{
             box-sizing: border-box;
             padding: 0;
         }
@@ -61,14 +61,12 @@
         }
         /**end of header-> start of menu**/
         .menu{
-            grid-area: menu;
-          
+            grid-area: menu; 
         }
         .nav_bar ol{
             list-style-type: none;
             margin: 5px;
-            padding: 5px;
-            
+            padding: 5px;  
         }
         .nav_bar ol li{
             background: rgb(49, 49, 49);
@@ -308,7 +306,6 @@
             text-align: center;
             padding: 5px;
             text-decoration: none;
-          
         }
         .fa-facebook{
             background: #1877f2;
@@ -328,10 +325,113 @@
             padding: 2px;
             font-size: 16px;
         }
-        
         .fa:hover{
             opacity: 0.5;
             color: aliceblue;
+        }
+        /**media queries**/
+             @media screen and (max-width: 600px) {
+   .button{
+            left:14vh;
+            top:20vh;
+            color: #48f3ff;  
+        }
+         .btn-primary{
+            width: 10vw;
+            height: 8vh;
+        }
+             }
+       
+     @media screen and (max-width: 520px) {
+        
+        .logo img{
+            float: left;
+            max-width:15%;
+            min-width: 10%;
+        }
+        .company-name{
+            position: absolute;
+            display: inline-flex;
+            font-size: 3.5vw;
+            left:30%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .nav_bar ol li a{
+            font-size: 3vw; 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container_property{
+            gap:1px;
+            width: 70%;
+        }
+        .images{
+            grid-area: 1/ span 6;
+        }
+          .button{
+            left:20vh;
+            top:22vh;
+            color: #48f3ff;
+            position: absolute;
+            margin: 2cap auto;
+            padding: 5cap;
+            font-size: 0.2vw;
+        }
+        .btn-primary{
+            width: 10vw;
+            height: 8vh;
+            padding: 1px;
+            text-align: center;
+            background: rgb(84, 83, 83);
+            border-style: none;
+        }
+        .descripton{
+            grid-area: 2/ span 6;
+            width: 50vw;
+            margin: auto;
+            
+        }
+        .descripton ul li{
+            padding: 3px;
+            font-size: 3.5vw;
+        }
+        .descripton h5{
+            font-size: 4.5vw;
+        }
+        .descripton>ul>li:last-child{
+            color: rgb(39, 241, 241);
+            font-size: 4vw;
+            transition-duration: 2s;
+        }
+          .descripton>ul>li:last-child:hover{
+                color:aliceblue;
+                font-size:5vw;
+        }
+        .maps{
+            grid-area: 4/span 6;
+            width: 60vw;
+            margin: 2px;
+            margin-left: 9vw;
+        }
+        .maps iframe{
+            width: 50vw;
+            height: 17vh;
+        }
+        .contact_info{
+            grid-area: 3/span 6;
+            width: 60vw;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+        .contact_info ul li{
+            font-size: 2vw;
+        }
+        .house{
+            background: #222529;
+            width: 50vw;
+            margin-left: 5vw;
+            height: auto;
+            box-shadow: 2px 0 10px 5px rgb(158, 158, 158), 2px 0 2px 1px rgb(198, 194, 194);
+        }   
         }
 
     </style>
