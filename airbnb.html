@@ -14,7 +14,7 @@
     <href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        *{
+         *{
             box-sizing: border-box;
             padding: 0;
         }
@@ -105,8 +105,7 @@
            border:  2px solid rgb(0, 255, 255);
            border-radius: 2%;
            align-items: center;
-           overflow: hidden;
-           margin-right: 2vw;
+          
         }
         .container_property{
             display: grid;
@@ -206,14 +205,13 @@
         .descripton{
             grid-area: description;
             background: #000000;
-            width: 40vw;
             margin: 1vw; 
         }
         .descripton>ul{
             list-style-type:none;
             color: aliceblue;
             word-wrap: break-word;
-            overflow: hidden;
+
         }
         .descripton>ul>li:nth-child(odd){
             color: #48f3ff;
@@ -250,7 +248,6 @@
 /**start of maps**/
         .maps{
             grid-area: maps;
-            width:40vw;
             float: left;
             display: flex;
             margin: 1vw;
@@ -344,13 +341,23 @@
         /**media queries**/
              @media screen and (max-width: 600px) {
         .button{
-            left:14vh;
+            left:15vw;
+            margin: 3px;
             top:20vh;
             color: #48f3ff;  
                 }
         .btn-primary{
-            width: 10vw;
-            height: 8vh;
+            width: 12vw;
+            height: 15vh;
+                }
+                .descripton{
+                    width: 100%;
+                }
+                .maps iframe{
+                    width: 100%;  
+                }
+                .contact_info{
+                    width: 100%;
                 }
              }
        
@@ -359,10 +366,12 @@
             width: 100%;
             }
         .nav_bar ol{
-            display:flex;            
+            display:flex; 
+            position:relative;
+            left: 18vw;           
                 }
          .nav_bar ol li a{
-            font-size: 3vw; 
+            font-size: 2.5vw; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
                 }
         .logo img{
@@ -383,38 +392,47 @@
         .menu{
             grid-area: 1/ span 6;
             position:absolute;
+            clear: both;
+            padding: 5px;
+            z-index: 1;
             margin: 5px;
-            margin-left: 20vw;
             top: 3vh;
             }
         .main{
-            width: 95%;
+            clear: both;
+            width: 85%;
             margin-top: 4vh;
-            overflow: hidden;
-            position: relative;
+            position: relative;;
+        }
+        .main::after{
+            content: "";
+            display: absolute;
+            clear: both;
         }
         .container_property{
             gap:1px;
         }
         .images{
             grid-area: 1/ span 6;
+            padding: 10px;
+            display: inline-flex;
         }
         .house{
             position: relative;
         }
           .button{
             clear: both;
-            left:60vw;
+            left:51vw;
             top:5vh;
             color: #48f3ff;
             position: absolute;
-            margin: 2cap auto;
+            margin:auto;
             padding: 5cap;
             font-size: 0.2vw;
                 }
         .btn-primary{
-            width: 12vw;
-            height: 8vh;
+            width: 10vw;
+            height: 15vh;
             padding: 1px;
             text-align: center;
             background: rgb(111, 110, 110);
