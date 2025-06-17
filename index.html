@@ -14,7 +14,7 @@
     <href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-         *{
+            *{
             box-sizing: border-box;
             padding: 0;
         }
@@ -105,8 +105,7 @@
            border:  2px solid rgb(0, 255, 255);
            border-radius: 2%;
            align-items: center;
-           overflow: hidden;
-           margin-right: 2vw;
+          
         }
         .container_property{
             display: grid;
@@ -206,14 +205,13 @@
         .descripton{
             grid-area: description;
             background: #000000;
-            width: 40vw;
             margin: 1vw; 
         }
         .descripton>ul{
             list-style-type:none;
             color: aliceblue;
             word-wrap: break-word;
-            overflow: hidden;
+
         }
         .descripton>ul>li:nth-child(odd){
             color: #48f3ff;
@@ -235,11 +233,21 @@
         .descripton em{
             color: #48ff9d;
         }
+        .descripton ol li{
+            list-style-type:disc;
+            color: whitesmoke;
+        }
+        .descripton ol li:nth-child(even){
+            color:#FF5A5F;
+        }
+        .descripton h3{
+            color: #FF5A5F;
+            padding: 5px;
+        }
         
 /**start of maps**/
         .maps{
             grid-area: maps;
-            width:40vw;
             float: left;
             display: flex;
             margin: 1vw;
@@ -332,34 +340,46 @@
         }
         /**media queries**/
              @media screen and (max-width: 600px) {
-   .button{
-            left:14vh;
+        .button{
+            left:15vw;
+            margin: 3px;
             top:20vh;
             color: #48f3ff;  
-        }
-         .btn-primary{
-            width: 10vw;
-            height: 8vh;
-        }
+                }
+        .btn-primary{
+            width: 12vw;
+            height: 15vh;
+                }
+                .descripton{
+                    width: 100%;
+                }
+                .maps iframe{
+                    width: 100%;  
+                }
+                .contact_info{
+                    width: 100%;
+                }
              }
        
      @media screen and (max-width: 520px) {
         .header{
             width: 100%;
-        }
-       
+            }
         .nav_bar ol{
-            display:flex;            
-        }
+            display:flex; 
+            position:relative;
+            left: 18vw;           
+                }
          .nav_bar ol li a{
-            font-size: 3vw; 
+            font-size: 2.5vw; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
+                }
         .logo img{
             float: left;
             max-width:15%;
             min-width: 10%;
         }
+        /**company name**/
         .company-name{
             position: absolute;
             display: inline-flex;
@@ -368,87 +388,93 @@
             top:0.7vh;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        
+/**menu query**/
         .menu{
             grid-area: 1/ span 6;
             position:absolute;
+            clear: both;
+            padding: 5px;
+            z-index: 1;
             margin: 5px;
-            margin-left: 20vw;
             top: 3vh;
-        }
+            }
         .main{
-            width: 95%;
+            clear: both;
+            width: 85%;
             margin-top: 4vh;
-            overflow: hidden;
-            position: relative;
+            position: relative;;
+        }
+        .main::after{
+            content: "";
+            display: absolute;
+            clear: both;
         }
         .container_property{
             gap:1px;
         }
         .images{
             grid-area: 1/ span 6;
+            padding: 10px;
+            display: inline-flex;
         }
         .house{
             position: relative;
         }
           .button{
             clear: both;
-            left:60vw;
+            left:51vw;
             top:5vh;
             color: #48f3ff;
             position: absolute;
-            margin: 2cap auto;
+            margin:auto;
             padding: 5cap;
-            font-size: 0.2vw;
-        }
+            font-size: 0.1vw;
+                }
         .btn-primary{
-            width: 12vw;
-            height: 8vh;
+            width: 10vw;
+            height: 10vh;
             padding: 1px;
             text-align: center;
             background: rgb(111, 110, 110);
             border-style: none;
-        }
+                    }
         .descripton{
             grid-area: 2/ span 6;
             display: block;
             width: 100%;
             padding: 5px;
-            margin:0px;
-        }
+            margin: 0px;
+                    }
         .descripton ul li{
             font-size: 3.5vw;
-        }
+                    }
         .descripton h5{
             font-size: 4.5vw;
-        }
+                    }
         .descripton>ul>li:last-child{
             color: rgb(39, 241, 241);
             font-size: 4vw;
             transition-duration: 2s;
-        }
+                                }
           .descripton>ul>li:last-child:hover{
                 color:aliceblue;
                 font-size:5vw;
-        }
+                                }
         .maps{
             grid-area: 4/span 6;
             width: 100%;
             margin: 2px;
             margin-left: 9vw;
-         
-
-        }
+                    }
         .maps iframe{
             width: 80%;
             height: 17vh;
-        }
+                    }
         .contact_info{
             grid-area: 3/span 6;
             width: 100%;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-        }
+                    }
         .contact_info ul li{
             font-size: 3vw;
         }
@@ -460,7 +486,6 @@
             box-shadow: 2px 0 10px 5px rgb(158, 158, 158), 2px 0 2px 1px rgb(198, 194, 194);
         }   
         }
-
     </style>
 </head>
 <body>
