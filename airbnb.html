@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KENYA PROPERTY SALE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="focus.js"></script>
+    <href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+        }
+        html,body{
+            margin: 0;
+        }
+        .property-container{
+            display: grid;
+            grid-template-areas: 'header header header header header header'
+            'menu main main main main main'
+            'footer footer footer footer footer footer';
+            gap: 5px;
+            text-align: center;
+         
+            
+
+        }
+        /**header logo area**/
+        .header{
+            grid-area: header;
+            background-image: linear-gradient(rgba(48,86,94,0),#085660);
+            padding: 5px;
+        }
+        .imageLogo-container{
+            position:relative;
+            display: flex;
+           
+        }
+        .logo{
+            align-self: flex-end;
+        }
+        .logo img{
+            margin-left:50px;
+            max-width:25%;
+            min-width: 10%;
+            border-radius: 10%;
+        }
+        .company-name{
+            text-decoration: none;
+            color: #006b42;
+            text-emphasis: none;
+            justify-content: space-between;
+            font-size: 2vw;
+            margin-left:15%;
+        }
+        /**end of header-> start of menu**/
+        .menu{
+            grid-area: menu; 
+        }
+        .nav_bar ol{
+            list-style-type: none;
+            margin: 5px;
+            padding: 5px;  
+        }
+        .nav_bar ol li{
+            background: rgb(49, 49, 49);
+            padding: 2px;
+            margin: 3px;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+        .nav_bar ol li a{
+            display: flex;
+            padding: 2px;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 2vw; 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .nav_bar a{
+             color: rgb(52,118,118);
+             transition-duration: 0.1s;
+        }
+        .nav_bar a.active{
+            color: #48f3ff;
+            border: none;
+        }
+        .nav_bar li:hover{
+            background: rgb(97, 94, 94);
+        }
+        .nav_bar a:hover{
+            color: aliceblue;
+        }
+        /**END of navigation area Start of main area**/
+        .main{
+            grid-area: main;
+            background: #606566;
+           border:  2px solid rgb(0, 255, 255);
+           border-radius: 2%;
+           align-items: center;
+           overflow: hidden;
+           margin-right: 2vw;
+        }
+        .container_property{
+            display: grid;
+            grid-template-areas: 'images images images images images images'
+                                'description description description maps maps maps'
+                                'contact_info contact_info contact_info maps maps maps';
+            gap: 5px;  
+        }
+        .images{
+            grid-area: images;   
+            height:auto;
+            padding: 15px;
+            grid-template-areas: 'button';
+            display: grid;
+        }
+        .house{
+            background: #222529;
+            width: 50vw;
+            margin-left: 10vw;
+            height: auto;
+            box-shadow: 2px 0 10px 5px rgb(158, 158, 158), 2px 0 2px 1px rgb(198, 194, 194);
+        }  
+        .button{
+           left:15vw;
+           top:20vh;
+            color: #48f3ff;
+            position: absolute;
+            margin: 2cap auto;
+            padding: 5cap;
+            font-size: 1.1vw;
+        }
+        .btn-primary{
+            width: 6vw;
+            height: auto;
+            padding: 1px;
+            text-align: center;
+            background: none;
+            border-style: none;
+            box-shadow: 1px 0px 5px 5px rgb(54, 51, 51);
+            color: rgb(179, 179, 179);
+            transition-duration: 2s;
+            transition-timing-function: ease-in-out;
+        }
+        .btn-primary:hover{
+            color:rgb(139, 253, 244);
+            background: rgb(45, 44, 44);
+            box-shadow: 1px 0px 3px 0px rgb(41, 40, 40);
+        }
+        .images img{
+            max-height: 30vh;
+            resize: none;
+            max-width: 50vw;  
+        }
+        .carousel-control-prev-icon{
+            position: relative;
+            display: inline-flex;
+            left: 18vw;
+        }
+         .carousel-control-next-icon{
+            position: relative;
+            display: inline-flex;
+            right: 18vw;
+        }
+        .modal-content{
+            background: #033238;
+        }
+        .modal-header{
+            background: rgb(39, 37, 37);
+        }
+        .modal-title{
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .modal-footer{
+            background: rgb(39, 37, 37);
+        }
+        .modal-footer .btn-secondary{
+            color:rgb(121, 5, 5);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+        }
+        .btn-secondary:hover,.btn-secondary:focus{
+            background: rgb(255, 255, 255);
+            color: red;
+        }
+        .modal-content .carousel-control-next-icon{
+            display: inline-flex;
+            right: 3vw;
+        }
+         .modal-content .carousel-control-prev-icon{
+            display: inline-flex;
+            left: 3vw;
+        }
+/**start of information**/
+        .descripton{
+            grid-area: description;
+            background: #000000;
+            width: 40vw;
+            margin: 1vw; 
+        }
+        .descripton>ul{
+            list-style-type:none;
+            color: aliceblue;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+        .descripton>ul>li:nth-child(odd){
+            color: #48f3ff;
+            font-size: 0.9vw;
+        }
+        .descripton>ul>li:last-child{
+            color: rgb(39, 241, 241);
+            font-size: 2vw;
+            transition-duration: 2s;
+        }
+        .descripton>ul>li:last-child:hover{
+                color:aliceblue;
+                font-size:2.2vw;
+        }
+        .descripton h6{
+            color: aliceblue;
+            margin: 5px;
+        }
+        .descripton em{
+            color: #48ff9d;
+        }
+        .descripton ol li{
+            list-style-type:disc;
+            color: whitesmoke;
+        }
+        .descripton ol li:nth-child(even){
+            color:#FF5A5F;
+        }
+        .descripton h3{
+            color: #FF5A5F;
+            padding: 5px;
+        }
+        
+/**start of maps**/
+        .maps{
+            grid-area: maps;
+            width:40vw;
+            float: left;
+            display: flex;
+            margin: 1vw;
+        }
+        .maps iframe{
+            width:25vw;
+            height: 50vh;
+            flex-shrink: 2;
+        }
+        .contact_info{
+            grid-area: contact_info;
+            width: 50vw;
+            align-items: center;
+            color: aliceblue;
+        }
+        .contact_info ul{
+            list-style-type: none;
+            display: inline-flex;
+        
+        }
+        .contact_info ul li{
+            font-size: 1.5vw;
+        }
+
+
+        /**END OF MAIN START OF FOOTER**/
+        .footer{
+            grid-area: footer;
+            background: gray; 
+        }
+          /*grid view columns*/
+        .col-1{width:8.33333333%}
+        .col-2{width:16.66666667%}
+        .col-3{width: 25%}
+        .col-4{width:31.33333333%}
+        .col-5{width:41.66666667%}
+        .col-6{width:50%}
+        .col-7{width:58.33333333%}
+        .col-8{width:66.66666667%}
+        .col-9{width:75%}
+        .col-10{width:83.33333333%}
+        .col-11{width:91.66666667%}
+        .col-12{width:100%}
+
+        [class*="col-"]{
+            float: left;
+            border-right:1px solid black;
+        }
+        [class*="col-"]:last-child{
+            border-style: none;
+        }
+        #footer{    
+            padding: 10px;
+            align-self: center;
+            
+        }
+        /**social icons footer**/
+        .fa{
+            display: inline-flex;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            margin-left: 10px;
+            border-radius: 2cap;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+        .fa-facebook{
+            background: #1877f2;
+            color: white;
+        }
+        .fa-youtube{
+            color:#ff0000;
+        }
+        .fa-instagram{
+            background-image: repeating-linear-gradient(10deg,#f9ce34 35%,#ee2a7b 40%,#6228d7 25%);
+        }
+        .fa-whatsapp{
+            color:white;
+            background: greenyellow;
+        }
+        .contacts .fa{
+            padding: 2px;
+            font-size: 16px;
+        }
+        .fa:hover{
+            opacity: 0.5;
+            color: aliceblue;
+        }
+        /**media queries**/
+             @media screen and (max-width: 600px) {
+        .button{
+            left:14vh;
+            top:20vh;
+            color: #48f3ff;  
+                }
+        .btn-primary{
+            width: 10vw;
+            height: 8vh;
+                }
+             }
+       
+     @media screen and (max-width: 520px) {
+        .header{
+            width: 100%;
+            }
+        .nav_bar ol{
+            display:flex;            
+                }
+         .nav_bar ol li a{
+            font-size: 3vw; 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+        .logo img{
+            float: left;
+            max-width:15%;
+            min-width: 10%;
+        }
+        /**company name**/
+        .company-name{
+            position: absolute;
+            display: inline-flex;
+            font-size: 3.5vw;
+            left:30%;
+            top:0.7vh;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+/**menu query**/
+        .menu{
+            grid-area: 1/ span 6;
+            position:absolute;
+            margin: 5px;
+            margin-left: 20vw;
+            top: 3vh;
+            }
+        .main{
+            width: 95%;
+            margin-top: 4vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container_property{
+            gap:1px;
+        }
+        .images{
+            grid-area: 1/ span 6;
+        }
+        .house{
+            position: relative;
+        }
+          .button{
+            clear: both;
+            left:60vw;
+            top:5vh;
+            color: #48f3ff;
+            position: absolute;
+            margin: 2cap auto;
+            padding: 5cap;
+            font-size: 0.2vw;
+                }
+        .btn-primary{
+            width: 12vw;
+            height: 8vh;
+            padding: 1px;
+            text-align: center;
+            background: rgb(111, 110, 110);
+            border-style: none;
+                    }
+        .descripton{
+            grid-area: 2/ span 6;
+            display: block;
+            width: 100%;
+            padding: 5px;
+            margin: 0px;
+                    }
+        .descripton ul li{
+            font-size: 3.5vw;
+                    }
+        .descripton h5{
+            font-size: 4.5vw;
+                    }
+        .descripton>ul>li:last-child{
+            color: rgb(39, 241, 241);
+            font-size: 4vw;
+            transition-duration: 2s;
+                                }
+          .descripton>ul>li:last-child:hover{
+                color:aliceblue;
+                font-size:5vw;
+                                }
+        .maps{
+            grid-area: 4/span 6;
+            width: 100%;
+            margin: 2px;
+            margin-left: 9vw;
+                    }
+        .maps iframe{
+            width: 80%;
+            height: 17vh;
+                    }
+        .contact_info{
+            grid-area: 3/span 6;
+            width: 100%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    }
+        .contact_info ul li{
+            font-size: 3vw;
+        }
+        .house{
+            background: #222529;
+            width: 50vw;
+            margin-left: 5vw;
+            height: auto;
+            box-shadow: 2px 0 10px 5px rgb(158, 158, 158), 2px 0 2px 1px rgb(198, 194, 194);
+        }   
+        }
+    </style>
+</head>
+<body>
+    <div class="property-container">
+        <div class="header">
+            <div class="imageLogo-container">
+                <div class="logo">
+                    <img src="image/ELGAPE.jpg" alt="logo">
+                </div>
+                <div class="company-name">EL GAPE PROPERTY</div>
+            </div>
+        </div>
+        <!--menu area/ navigation area-->
+        <div class="menu">
+            <nav class="nav_bar">
+            <ol>
+                <li><a href="http://127.0.0.1:">HOME</a></li>
+                <li><a  href="http://127.0.0.1:">LANDS</a></li>
+                <li><a class="active"  href="http://127.0.0.1:">AIRBNB</a></li>
+                <li><a  href="http://127.0.0.1:">CONTACTS</a></li>
+            </ol>
+            </nav>
+        </div>
+        <!--Start of main -->
+        <div class="main">
+                <div class="container_property">
+                <div class="images">
+                           <!-- <-->
+                    <div class="house">
+                                    <!--<img src="/project1/image/project_images/mansionette.jpg">-->
+                                     <!--start of carousel-->
+                    <div id="carouselImage" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                                <img src="image/road_house.jpg" alt="Tassia_house">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="image/mansionette_front.jpg" alt="Embakasi mansionette">
+                        </div><div class="carousel-item">
+                                <img src="image/mansionette_pouch.jpg" alt="Fedha House">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="image/mansionette_sitting2.jpg" alt="Fedha">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="image/bungalow.jpg" alt="Bungalow">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="image/bungalow_front.jpg" alt="Embakasi Bungalow">
+                        </div>
+                        <div class="carousel-item">
+                                <img src="image/bungalow_sitting.jpg" alt="Sitting Bungalow">
+                        </div>
+                      <!--buttons carousel-->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselImage" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselImage" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                </div>
+            
+                <div class="button">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kenya">
+                            <p>More Pics</p> 
+                    </button>
+                    <!--corousel lightbox-->
+                    <div class="modal fade" id="kenya" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#kenyaLabel1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="kenyaLabel1">Property Kenya,Embakasi</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                                </div>
+                                <div class="modal-body">
+                                        <div id="carousel_Image" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                      <img src="image/road_house.jpg" alt="Tassia_house">
+                                                </div>
+                                                 <div class="carousel-item">
+                                                      <img src="image/joint_.jpg" alt="Tassia_house">
+                                                </div>
+                                            </div>
+                                               <button class="carousel-control-prev" type="button" data-bs-target="#carousel_Image" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carousel_Image" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CLOSE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                    <!--information description-->
+                        <div class="descripton"><h3>AIRBNB</h3>
+                                <ul>
+                                    <li><h5>Location:Kilimani</h5></li>
+                                    <li><h3>Amenities</h4><em><b>Two Bedroom,All Ensuite</b></em> </h3>
+                                        <ol>
+                                            <li>Heated swimming indoor pool</li>
+                                            <li>Modern Gym</li>
+                                            <li>Kids play room</li>
+                                            <li>Garden with foundations</li>
+                                            <li>Full back generator</li>
+                                            <li>High speed lifts</li>
+                                        </ol>
+                                     </li>
+                                </ul>
+                        </div>
+                        <div class="maps">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6517.328432291727!2d36.88685833127778!3d-1.307526784347388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f13b45808f83f%3A0xed689e0502c31c40!2sTassia%2C%20Nairobi!5e0!3m2!1ssw!2ske!4v1749827569851!5m2!1ssw!2ske"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                        </div>
+                        <div class="contact_info">
+                             <div class="col-10">
+                                <ul>
+                                         <li class="fa fa-phone">+254 797-566-655</li>
+                                        <li class="fa fa-phone">+254 704-764-778</li>
+                                        <li> <a href="#" class="fa fa-whatsapp"></a></li>
+                                </ul>
+                               
+                        </div>
+                        </div>
+                </div>
+        </div>
+        <!--start of footer-->
+        <div class="footer">
+            <div id="footer">
+                <div class="col-6">
+                    <div class="contacts">
+                        <ul>
+                            <li class="fa fa-phone">+254 797-566-655</li>
+                            <li class="fa fa-phone">+254 704-764-778</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-whatsapp"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
